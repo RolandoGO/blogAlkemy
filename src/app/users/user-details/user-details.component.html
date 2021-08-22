@@ -1,0 +1,45 @@
+<div class="row p-2">
+
+    <div class="col-md-6 " *ngFor="let datos of userData">
+               
+        <div class="card " style="width: 100%; height: 100%;">
+          
+            
+            
+
+            <div *ngIf="data.path==='albums'">
+                <div class="card-body">
+                    <h4 class="card-title">Titulo: {{datos.title}}</h4>
+                    <p>ID de Usuario:{{datos.userId}}</p>
+                </div>
+            </div>
+
+            <div *ngIf="data.path==='posts'">
+                <div class="card-body">
+                    <h4 class="card-title">Titulo: {{datos.title}}</h4>
+                    <p>ID de Usuario:{{datos.userId}}</p>
+                    <p>{{datos.body}}</p>
+                    
+                </div>
+            </div>
+            <div *ngIf="data.path==='todos'">
+                <div class="card-body">
+                    <h4 class="card-title">Titulo: {{datos.title}}</h4>
+                    <p>ID de Usuario:{{datos.userId}}</p>
+                    <p>Completado: {{datos.completed}}</p>
+                    
+                </div>
+            </div>
+
+
+
+          </div>
+       </div>
+   </div>
+
+
+
+
+
+
+

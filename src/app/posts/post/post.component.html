@@ -1,0 +1,37 @@
+<h3>Posts de Usuarios</h3>
+
+<div *ngIf="!postDetails">
+  <div class="form-group mb-2">
+        
+    <input type="text" class="form-control" id="usuario" placeholder="Numero de Usuario" name="filterPosts" [(ngModel)]="filterPosts">
+    
+    
+  </div>
+  <div >
+    <div class="row">
+  
+      <div class="col-md-4 m-2 " *ngFor="let datos of data | filterPipe:filterPosts">
+                 
+          
+            
+              <app-post-card [data]="datos"  (searchData)="childMsj($event)"></app-post-card>
+              
+            
+         </div>
+     </div>
+  </div>
+  
+</div>
+
+<div *ngIf="postDetails" >
+  <button class="btn btn-sm btn-warning" (click)="postDetails=false">Go Back</button>
+  <hr>
+
+  <div *ngIf="postDetailsData.path==='comments'">
+    <app-post-comments [data]="postDetailsData"></app-post-comments>
+  </div>
+  <div *ngIf="postDetailsData.path==='users'">
+    <app-user-detail-card [data]="postDetailsData"></app-user-detail-card>
+  </div>
+
+</div>

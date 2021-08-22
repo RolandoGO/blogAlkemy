@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap");
+
+* {
+  color: #3a3a3a;
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+.my-container {
+  height: 100vh;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

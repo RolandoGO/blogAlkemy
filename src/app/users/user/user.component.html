@@ -1,0 +1,32 @@
+
+
+    
+
+    <main  class="overflow-auto w-100 h-100 p-3">
+    
+        <div *ngIf="userDetailsOff; else userDetailsOn">
+            <div  *ngIf="usersList.length>0">
+    
+                <app-usercard [data]="usersList"  (userDetails)="childMsj($event)"></app-usercard>
+                  
+            </div>
+        </div>
+
+        <ng-template #userDetailsOn>
+            <div class="text-center">
+                <button class="btn btn-sm btn-warning" (click)=" userDetailsOff= true">Go Back</button>
+               
+                <hr>
+
+                <div *ngIf="userDetailData.path.length > 0">
+                    <app-user-details [data]="userDetailData"></app-user-details>
+                </div>
+                
+            </div>
+        </ng-template>
+        
+    
+    </main>
+    
+    
+

@@ -1,0 +1,11 @@
+
+<div class="card " style="width: 100%; height: 100%;">
+  <div class="card-body">
+    <h4 class="card-title">{{data.title}}</h4>
+    <p class="card-text">{{data.body}}</p>
+    <div class="d-flex">
+      <button class="btn btn-primary btn-sm m-2" (click)="requestHandler(data.userId, 'comments')">Comentarios</button>
+    <button class="btn btn-primary btn-sm m-2" (click)="requestHandler(data.userId, 'users')">Usuario</button>
+    </div>
+  </div>
+</div>

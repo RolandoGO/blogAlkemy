@@ -1,0 +1,24 @@
+<div *ngIf="error; else showComments">
+    <h2>Error en la busqueda de comentarios</h2>
+</div>
+
+<ng-template #showComments>
+   
+        <div class="row">
+            <div class="col-md-6 " *ngFor="let datos of commentsData">
+                   
+                <div class="card " style="width: 100%; height: 100%;">
+                  
+                    
+                    <div class="card-body">
+                      <h4 class="card-title">Usuario: {{datos.name}}</h4>
+                      <p>ID de Usuario:{{datos.postId}}</p>
+                      <p class="card-text"><strong>Email: </strong> {{datos.email}}</p>
+                      <p class="card-text"><strong>Comentario: </strong> {{datos.body}}</p>
+                      
+                    </div>
+                  </div>
+               </div>
+        </div>
+    
+</ng-template>

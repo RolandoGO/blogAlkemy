@@ -1,0 +1,26 @@
+<div class="row p-2">
+
+    <div class="col-md-6 ">
+               
+      <div class="card " style="width: 100%; height: 100%;" *ngIf="!error">
+          
+          <div class="card-body">
+            <h4 class="card-title">Usuario: {{userData?.name}}</h4>
+            <p>ID de Usuario:{{userData?.id}}</p>
+            <p class="card-text"><strong>Empresa: </strong> {{userData?.company.name}}</p>
+            <p class="card-text"><strong>Slogan: </strong> {{userData?.company.catchPhrase}}</p>
+            
+          </div> 
+
+        <div class="card " style="width: 100%; height: 100%;" *ngIf="error">
+          
+            
+          <div class="card-body">
+            <h4 class="card-title">Error al buscar informacion del usuario</h4>
+            
+            
+          </div>
+        </div>
+      </div>
+       </div>
+   </div>

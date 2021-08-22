@@ -1,0 +1,7 @@
+<div *ngIf="!error">
+    <h2>Lista de Todos</h2>
+    <app-todo-card [data]="todosList"></app-todo-card>
+</div>
+<div *ngIf="error">
+   <p>No se encontraron los Todos</p> 
+</div>

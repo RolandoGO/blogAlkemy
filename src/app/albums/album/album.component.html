@@ -1,0 +1,28 @@
+
+
+<div *ngIf="!error">
+    <div *ngIf="!albumDetails; else showDetails">
+
+        <h2>Lista de Albunes</h2>
+        <app-album-card [data]="albumsList" (albumDetails)="childMsj($event)"></app-album-card>
+        
+    </div>
+    <ng-template #showDetails>
+        <div *ngIf="displayPhotos">
+            <button class="btn btn-sm btn-warning" (click)="albumDetails = false;displayPhotos = false">Go Back</button>
+            <h1>Photos</h1>
+            <app-album-photo [data]="photosList" (deleteImage)="deleteImageHandler($event)"></app-album-photo>
+        </div>
+        
+        
+        <div *ngIf="displayUser">
+            <button class="btn btn-sm btn-warning" (click)="albumDetails=false; displayUser=false">Go Back</button>
+            <app-user-detail-card [data]="userDetails"></app-user-detail-card>
+        </div>
+    </ng-template>
+    
+</div>
+
+<div *ngIf= "error">
+    <h2>Error en cargar recursos</h2>
+</div>
